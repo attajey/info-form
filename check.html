@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin-left: 10%;
+            margin-top:  5px;
+
+            border-collapse: collapse;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        #shape {
+            width: 70%;
+            position: relative;
+            left: 10%;
+            margin: 50px;
+            padding: 20px;
+            color: white;
+            border: 10px #9c0414 groove;
+			border-radius: 50px;
+        }
+
+        input[type=text], select {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 5px solid black;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 20%;
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body style="background-color: #575559">
+<div>
+    <div id="shape">
+        <input type="text" onkeyup="ajax()"  id="input" placeholder="Seach...">
+    </div>
+</div>
+<hr><br>
+<div id="table">
+
+    <script>
+        function ajax() {
+            var string=document.getElementById("input").value;
+            var xhttp;
+            if (string == "") {
+                document.getElementById("result").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("table").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "what_you_want?q="+string, true);
+            xhttp.send();
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Sign Up From</title>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<style>
+		html, body {
+			display: flex;
+			justify-content: center;
+			font-family: Impact, Charcoal, sans-serif;
+			font-size: 13px;
+			background-color: #fef6ff;
+		}
+		form {
+			border: 500px solid #000000;
+
+		}
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 10px 10px;
+			margin: 10px 0;
+			display: inline-block;
+			border: 5px solid #000000;
+			box-sizing: border-box;
+			border-radius: 100px;
+		}
+		.icon {
+			font-size: 110px;
+			display: flex;
+			justify-content: center;
+			color: #0007be;
+		}
+		button {
+			background-color: #0007be;;
+			color: black;
+			padding: 10px 0;
+			margin: 1px 0;
+			//border: none;
+			border-top-style: dotted;
+			border-right-style: solid;
+			border-bottom-style: dotted;
+			border-left-style: solid;
+			border-color : black;
+			cursor: url('guitar.cur'), auto;//grab;
+			width: 48%;
+			border-radius: 190px;
+		}
+		h1 {
+			text-align:center;
+			fone-size:20;
+		}
+		button:hover {
+			opacity: 0.8;
+		}
+		.formcontainer {
+			text-align: center;
+			margin: 14px 50px 15px;
+			background-color: #5c93f5;
+			border-radius: 15px;
+
+			
+			
+		}
+		.container {
+			padding: 10px 10px;
+			//height: 300px;
+			//width: 300px;
+			margin: auto;
+			border-radius : 100px;
+			text-align:left;
+			font-family: Arial, Helvetica, sans-serif;
+			//background-color: #9C9C9C;
+		}
+		span.psw {
+			float: right;
+			padding-top: 0;
+			padding-right: 15px;
+			
+		}
+		/* Change styles for span on extra small screens */
+		@media screen and (max-width: 300px) {
+			span.psw {
+				display: block;
+				float: none;
+			}
+		}
+	</style>
+</head>
+<body style="background-color: gray">
+<form action="/form" method="get">
+	<h1>Information Entry Form</h1>
+	<div class="icon">
+		<i class="fa">&#xf0c0</i>
+	</div>
+	<div class="formcontainer">
+		<div class="container">
+			<label ><strong>Name</strong></label>
+			<input type="text" placeholder="Enter Your Name" name="name" required>
+			<label ><strong>Date</strong></label>
+			<input type="text" pattern="^(\d{4}\/(0[1-9]|1[012])\/(0[1-9]|[12][0-9]|3[01]))" placeholder="yyyy/mm/dd" name="date" required>
+			<label><strong>Address</strong></label>
+			<input type="text" placeholder="Enter Your Address" name="address" required>
+		</div>
+		<button type="submit"><strong>Add To List</strong></button>
+		<i style="font-size:24px" class="fa">&#xf11a;</i>
+	</div>
+</form>
+</body>
+</html>
